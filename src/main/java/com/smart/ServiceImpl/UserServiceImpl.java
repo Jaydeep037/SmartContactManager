@@ -15,6 +15,9 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public User createUser(User user) {
+		user.setRole("ROLE_USER");
+		user.setEnabled(true);
+		user.setImageUrl("default.png");
 		User savedUser=this.userRepo.save(user);
 		return savedUser;
 	}

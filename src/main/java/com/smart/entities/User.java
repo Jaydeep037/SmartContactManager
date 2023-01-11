@@ -12,17 +12,26 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "users")
 public class User {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	
+	@NotBlank(message="Name cannot be empty")
+	@Size(min=3 ,max=20,message="min 3 and maximum 20 characters allowed")
 	private String name;
 	@Column(unique = true)
+	@Email(regexp = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" ,message="Invalid email address")
 	private String email;
+	
+	@Size(min=3 ,message="Password must be more than 3 characters")
 	private String password;
 	private String role;
 	private boolean enabled;
@@ -121,7 +130,6 @@ public class User {
 
 	public User() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

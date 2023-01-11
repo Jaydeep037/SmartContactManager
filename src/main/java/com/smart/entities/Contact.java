@@ -96,15 +96,11 @@ public class Contact {
 	}
 	public Contact() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	@Override
 	public String toString() {
 		return "Contact [cid=" + cid + ", name=" + name + ", nickName=" + nickName + ", work=" + work + ", email="
 				+ email + ", image=" + image + ", phone=" + phone + ", Description=" + Description + ", user=" + user
 				+ "]";
-	}
-	
-	
-	
+	}	
 }
