@@ -17,7 +17,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "users")
+@Table(name = "userp")
 public class User {
 
 	@Id
@@ -27,7 +27,7 @@ public class User {
 	@NotBlank(message="Name cannot be empty")
 	@Size(min=3 ,max=20,message="min 3 and maximum 20 characters allowed")
 	private String name;
-	@Column(unique = true)
+	@Column(name="email",unique = true)
 	@Email(regexp = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" ,message="Invalid email address")
 	private String email;
 	

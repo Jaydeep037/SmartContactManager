@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/base::layout(~{::section})">
+
+<head>
+<meta charset="UTF-8">
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+	integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<!-- Page title -->
+<title>UserDashboard</title>
+</head>
+<body>
+	<section>
+		<div class="card">
+			<h1 class="text-center">Add Contact</h1>
+			<div class="card-body">
+				<div class="container-fluid mt-1">
+					<div class="row">
+						<div class="col-md-8 offset-md-2">
+							<form action="#" th:object="${contact}"
+								enctype="multipart/form-data" method="POST"
+								th:action="@{/user/process-contact}" class="mt-2">
+
+								<div class="form-group">
+									<label for="exampleInputname">Name:</label><br> <input
+										type="text" class="form-control" name="name" id="input_name"
+										placeholder="Enter name" style="width: 80%">
+								</div>
+
+								<div class="form-group">
+									<label for="exampleInputSecondName">NickName:</label> <input
+										type="text" class="form-control" name="nickname"
+										id="input_nick_name" placeholder="Enter nick name"
+										style="width: 80%">
+								</div>
+
+								<div class="form-group">
+									<label for="exampleInputEmail">Email</label> <input
+										type="email" class="form-control" name="email"
+										id="input_email" placeholder="Enter email" style="width: 80%">
+								</div>
+
+								<div class="form-group">
+									<label for="exampleInputWork">Work</label> <input type="text"
+										class="form-control" name="work" id="input_work"
+										placeholder="Enter work" style="width: 80%">
+								</div>
+
+
+								<div class="form-group">
+									<label for="exampleInputphone">Phone</label><i
+										class="fa-regular fa-phone-plus"></i> <input type="text"
+										class="form-control" name="phone" id="input_phone"
+										placeholder="Enter phone number" style="width: 80%">
+								</div>
+
+								<div class="form-group">
+									<label for="contact-description">Contact Description:</label>
+									<textarea name="about" placeholder="Enter contact description"
+										rows="10" class="form-control" style="width: 80%"></textarea>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
